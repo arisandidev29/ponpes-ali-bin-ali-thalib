@@ -7,14 +7,39 @@
 
 :root {
     --bs-primary-rgb : 237, 196 , 124;
+    --bs-primary  : 237, 196 , 124;
      --bs-dark-rgb: 103 , 57 , 44;
 }
 
 @font-face {
-    font-family: 'roboto';
-    src: url('../font/Roboto/Roboto-Regular.ttf') format('truetype');
-
-    font-family: 'poppins' ;
+    font-family: 'poppins';
     src: url('../font/Poppins/Poppins-Regular.ttf') format('truetype');
 }
 
+@font-face {
+    font-family: 'roboto';
+    src: url('../font/Roboto/Roboto-Regular.ttf');
+}
+
+.font-roboto {
+    font-family: roboto;
+}
+
+.font-poppins {
+    font-family: poppins;
+}
+
+.w-90 {
+    width: 90%;
+}
+
+.btn-primary {
+    background-color: rgb( 237, 196 , 124) ;
+    border: none;
+}
+
+
+.btn-primary:hover {
+    background-color: rgb(226, 181, 103) ;
+
+}
