@@ -6,9 +6,11 @@
 
 
 :root {
-    --bs-primary-rgb : 237, 196 , 124;
-    --bs-primary  : 237, 196 , 124;
-     --bs-dark-rgb: 103 , 57 , 44;
+    --bs-primary-rgb: 237, 196, 124;
+    --bs-primary: 237, 196, 124;
+    --bs-dark-rgb: 103, 57, 44;
+    --bs-link-color : #67392c;
+    --bs-link-hover-color : #edc47c; 
 }
 
 @font-face {
@@ -33,13 +35,38 @@
     width: 90%;
 }
 
+.w-60 {
+    width: 60%;
+}
+
 .btn-primary {
-    background-color: rgb( 237, 196 , 124) ;
+    background-color: rgb(237, 196, 124);
     border: none;
 }
 
 
 .btn-primary:hover {
-    background-color: rgb(226, 181, 103) ;
+    background-color: rgb(226, 181, 103);
 
+}
+
+.nav-item {
+    background-color: #fff;
+}
+
+
+
+/* custom clss */
+
+@media screen  and (max-width : 600px)  {
+    .address {
+        display: block;
+        font-size: .5rem;        
+        margin-top: -1rem;
+    } 
+
+    .nav-item {
+        width: 90%;
+    }
+    
 }
