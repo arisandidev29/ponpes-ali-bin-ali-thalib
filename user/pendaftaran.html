@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <link rel="stylesheet" href="../css/bootstrap-icons.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <title>User page</title>
+</head>
+
+<body>
+    <div class="row gx-0">
+        <div class="  col-2 d-none d-md-block bg-dark min-vh-100 py-4 px-2  ">
+            <div id="userprofile">
+                <img src="../asset/logo.jpeg" alt="user image"
+                    class="mx-auto d-block  rounded-circle bg-primary  img-thumbnail" style="
+                    width: 50px;
+                    height: 50px;
+                    ">
+                <p class="text-center text-white mt-2">Username </p>
+                <hr class="text-primary ">
+                <nav>
+                    <ul class=" nav  flex-column gap-3  ">
+                        <li class="nav-item rounded-3">
+                            <a class=" nav-link d-flex  justify-content-between " aria-current="page" href="#">
+                                Home
+                                <i class="bi bi-house"></i>
+
+
+                            </a>
+                        </li>
+                        <li class="nav-item rounded-3">
+                            <a class="nav-link d-flex justify-content-between" href="#">
+                                Persyaratan
+
+                                <i class="bi bi-info-circle"></i>
+                            </a>
+                        </li>
+                        <li class="nav-item rounded-3">
+                            <a class="nav-link d-flex justify-content-between" href="#">
+                                Pendaftaran
+                                <i class="bi bi-pencil-square"></i>
+                            </a>
+                        </li>
+                        <li class="nav-item rounded-3">
+                            <a class="nav-link d-flex justify-content-between Logout">
+                                Logout
+                                <i class="bi bi-box-arrow-right"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+
+
+        </div>
+        <div class="col-12 col-md-10">
+            <div>
+
+                <div class="row align-items-center px-1 ">
+                    <!-- hamburger menu -->
+                    <div class="col-1 d-sm-none">
+                        <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas"
+                            data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling"><i
+                                class="bi bi-list"></i></button>
+
+                        <div class="offcanvas offcanvas-start bg-dark" data-bs-scroll="true" data-bs-backdrop="false"
+                            tabindex="-1" id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
+                            <div class="offcanvas-header">
+                                <h5 class="text-white offcanvas-title" id="offcanvasScrollingLabel">
+                                    Menu
+                                </h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="offcanvas"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="offcanvas-body">
+                                <nav class="w-100 px-4">
+                                    <ul class=" nav  flex-column gap-3  ">
+                                        <li class="nav-item rounded-3">
+                                            <a class=" nav-link d-flex  justify-content-between " aria-current="page"
+                                                href="#">
+                                                Home
+                                                <i class="bi bi-house"></i>
+
+
+                                            </a>
+                                        </li>
+                                        <li class="nav-item rounded-3">
+                                            <a class="nav-link d-flex justify-content-between" href="#">
+                                                Persyaratan
+
+                                                <i class="bi bi-info-circle"></i>
+                                            </a>
+                                        </li>
+                                        <li class="nav-item rounded-3">
+                                            <a class="nav-link d-flex justify-content-between" href="#">
+                                                Pendaftaran
+                                                <i class="bi bi-pencil-square"></i>
+                                            </a>
+                                        </li>
+                                        <li class="nav-item rounded-3">
+                                            <a class="nav-link d-flex justify-content-between Logout">
+                                                Logout
+                                                <i class="bi bi-box-arrow-right"></i>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-3 py-2 ">
+                        <img src="../asset/logo.jpeg" alt="logo" class="w-60 img-fluid  mx-auto d-block  ">
+                    </div>
+                    <div class="col-6 ">
+                        <p class="fs-6  fw-bold text-dark ">Pondok Pesantren Ali Bin Ali Thalib</p>
+                        <small class="address">
+                            JL. Mayor Daud Umar, Dowora, Kec Tidore Timur
+                        </small>
+                    </div>
+                </div>
+                <!-- end hamburger menu -->
+                <hr>
+
+                <div class="p-5 ">
+
+                    <h1 class="text-primary">Pendaftaran Santri</h1>
+
+                    <hr class="text-primary ">
+
+                    <form action="" class="container-md">
+                        <div class=" row">
+                            <div class="mb-3 col-md-6">
+                                <label for="" class="form-label text-primary fs-5">Name</label>
+                                <input type="text" class="form-control" name="" id="" aria-describedby="helpId"
+                                    placeholder="" />
+                            </div>
+                            <div class="mb-3 col-md-6">
+                                <label for="" class="form-label text-primary fs-5">Email</label>
+                                <input type="email" class="form-control" name="email" id="" aria-describedby="helpId"
+                                    placeholder="" />
+                            </div>
+                            <div class="mb-3 col-md-6">
+                                <label for="" class="form-label text-primary fs-5">No.HP</label>
+                                <input type="text" class="form-control" name="phone_number" id=""
+                                    aria-describedby="helpId" placeholder="No.Hp " />
+                            </div>
+                            <div class="mb-3 fs-5  col-md-6">
+                                <label for="" class="form-label text-primary">Agama</label>
+                                <select class="form-select form-select-md" name="" id="">
+                                    <option selected>Pilih Agama</option>
+                                    <option value="">Islam</option>
+                                    <option value="">Kristen</option>
+                                    <option value="">Katholik</option>
+                                </select>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="" class="form-label fs-5 text-primary">Alamat</label>
+                                <textarea class="form-control" name="" id="" rows="3"></textarea>
+                            </div>
+
+                            <div class="col-md-6">
+                                <p class="text-primary fs-5  ">Jenis Kelamin</p>
+                                <div class="d-flex gap-4  ">
+                                    <div class="form-check">
+                                        <input class="form-check-input bg-dark" type="radio" name="exampleRadios"
+                                            id="exampleRadios1" value="laki-laki" checked>
+                                        <label class="form-check-label" for="exampleRadios1">Laki-laki</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="exampleRadios"
+                                            id="exampleRadios2" value="perempuan">
+                                        <label class="form-check-label" for="exampleRadios2">Perempuan</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="mb-3 col-md-6">
+                                <label for="" class="form-label text-primary fs-5">Tempat Lahir</label>
+                                <input type="text" class="form-control" name="tempat_lahir" id=""
+                                    aria-describedby="helpId" placeholder="" />
+                            </div>
+                            <div class="mb-3 col-md-6">
+                                <label for="" class="form-label text-primary fs-5">Sekolah Sebelumnya </label>
+                                <input type="text" class="form-control" name="tempat_lahir" id=""
+                                    aria-describedby="helpId" placeholder="" />
+                            </div>
+                            <div class="mb-3 col-md-6">
+                                <label for="" class="form-label text-primary fs-5">NISN</label>
+                                <input type="text" class="form-control" name="tempat_lahir" id=""
+                                    aria-describedby="helpId" placeholder="" />
+                            </div>
+                            <input name="" id="" class="btn btn-primary fs-5  " type="button" value="Kirim" />
+
+                        </div>
+                    </form>
+
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+    </div>
+
+    <script src="../js/bootstrap.bundle.js"></script>
+</body>
+
+</html>
