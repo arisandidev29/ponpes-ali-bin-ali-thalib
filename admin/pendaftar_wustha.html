@@ -69,7 +69,7 @@
                         <!-- Add icons to the links using the .nav-icon class
                                  with font-awesome or any other icon font library -->
                         <li class="nav-item en">
-                            <a href="index.html " class="nav-link active">
+                            <a href="#" class="nav-link active">
                                 <i class="nav-icon fas fa-tachometer-alt"></i>
                                 <p>
                                     Dashboard
@@ -87,7 +87,7 @@
                             </a>
                         </li>
                         <li class="nav-item menu-open">
-                            <a href="peserta.html" class="nav-link">
+                            <a href="pages/widgets.html" class="nav-link">
                                 <!-- <i class="nav-icon fas fa-th"></i> -->
                                 <i class=" nav-icon  fas fa-users"></i>
                                 <p>
@@ -125,12 +125,12 @@
                 <div class="container-fluid">
                     <div class="row mb-2">
                         <div class="col-sm-6">
-                            <h1 class="m-0">Daftar User</h1>
+                            <h1 class="m-0">Daftar Semua Peserta</h1>
                         </div><!-- /.col -->
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right">
                                 <li class="breadcrumb-item"><a href="#">dashboard</a></li>
-                                <li class="breadcrumb-item "><a href="">Daftar User</a></li>
+                                <li class="breadcrumb-item  active"><a href="">Daftar Semua peserta</a></li>
                             </ol>
                         </div><!-- /.col -->
                     </div><!-- /.row -->
@@ -144,7 +144,7 @@
                     <!-- TABLE -->
                     <div class="card">
                         <div class="card-header">
-                            <h3 class="card-title">Daftar User </h3>
+                            <h3 class="card-title">Daftar Semua Peserta Wustha</h3>
                         </div>
                         <!-- /.card-header -->
                         <div class="card-body">
@@ -152,9 +152,10 @@
                                 <thead>
                                     <tr>
                                         <th>No</th>
-                                        <th>Username</th>
-                                        <th>Email</th>
-                                        <th>Password</th>
+                                        <th>Nama </th>
+                                        <th>No.Hp</th>
+                                        <th>Alamat</th>
+                                        <th>Asal Sekolah</th>
                                         <th>#</th>
                                     </tr>
                                 </thead>
@@ -163,7 +164,8 @@
                                         <td>1</td>
                                         <td>testing</td>
                                         <td>083434451234</td>
-                                        <td>f#gmail </td> 
+                                        <td>Tidore, Soasio rt rw fdf fjdkjf fdjkf fjdkfjdkfjdfk fjdkf</td>
+                                        <td> SD Negeri 1</td>
                                         <td class="d-flex justify-content-center gap-2  ">
                                             <a
                                                 name=""
@@ -189,9 +191,10 @@
                                 <tfoot>
                                     <tr>
                                         <th>No</th>
-                                        <th>Username</th>
-                                        <th>Email</th>
-                                        <th>Password</th>
+                                        <th>Nama </th>
+                                        <th>No.Hp</th>
+                                        <th>Alamat</th>
+                                        <th>Asal Sekolah</th>
                                         <th>#</th>
                                     </tr>
                                 </tfoot>
@@ -253,7 +256,7 @@
     <script>
         $(function () {
             $("#example1").DataTable({
-                "responsive": true, "lengthChange": false, "autoWidth": true ,
+                "responsive": true, "lengthChange": false, "autoWidth": false,
                 // "buttons": ["copy", "csv", "excel", 
                 // "pdf", "print", "colvis"],
                 "buttons" : [
