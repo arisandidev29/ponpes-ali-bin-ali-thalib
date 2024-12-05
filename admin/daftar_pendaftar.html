@@ -141,7 +141,21 @@
             <!-- Main content -->
             <div class="content">
                 <div class="container-fluid">
+                    <a
+                        name=""
+                        id=""
+                        class="btn btn-primary my-2  "
+                        href="#"
+                        role="button"
+                        >
+                        Tambah Peserta 
+                        <i class="fas fa-user-plus mx-2 d-inline-block "></i>
+                        
+                        </a                   
+                        >
+                      
                     <!-- TABLE -->
+
                     <div class="card">
                         <div class="card-header">
                             <h3 class="card-title">Daftar Semua Peserta</h3>
@@ -169,26 +183,15 @@
                                         <td> SD Negeri 1</td>
                                         <td>Ulya</td>
                                         <td class="d-flex justify-content-center gap-2  ">
-                                            <a
-                                                name=""
-                                                id=""
-                                                class="btn btn-primary"
-                                                href="#"
-                                                role="button"
-                                                >Detail</a
+                                            <a name="" id="" class="btn btn-primary" href="#" role="button">Detail</a>
 
-                                            >
-
-                                            <button
-                                                type="button"
-                                                class="btn btn-danger"
-                                            >
+                                            <button type="button" class="btn btn-danger">
                                                 delete
                                             </button>
-                                                                                        
+
                                         </td>
                                     </tr>
-                                    
+
                                 </tbody>
                                 <tfoot>
                                     <tr>
@@ -262,42 +265,42 @@
                 "responsive": true, "lengthChange": false, "autoWidth": false,
                 // "buttons": ["copy", "csv", "excel", 
                 // "pdf", "print", "colvis"],
-                "buttons" : [
+                "buttons": [
                     {
                         "extend": 'print',
-                        "exportOptions" : {
+                        "exportOptions": {
                             "columns": ':visible'
                         }
                     },
                     {
                         "extend": 'excelHtml5',
-                        "exportOptions" : {
+                        "exportOptions": {
                             "columns": ':visible'
                         }
                     },
                     {
                         "extend": 'csvHtml5',
-                        "exportOptions" : {
+                        "exportOptions": {
                             "columns": ':visible'
                         }
                     },
                     {
                         "extend": 'pdfHtml5',
-                        "exportOptions" : {
+                        "exportOptions": {
                             "columns": ':visible'
                         }
                     },
                     'colvis'
                 ],
-                "columnDefs" : [
+                "columnDefs": [
                     {
-                    //   "targets": -1,
+                        //   "targets": -1,
                         visible: false
                     }
                 ]
-                
 
-                
+
+
             }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
             $('#example2').DataTable({
                 "paging": true,
