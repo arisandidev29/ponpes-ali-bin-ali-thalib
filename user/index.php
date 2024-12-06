@@ -1,3 +1,13 @@
+<?php
+session_start();
+
+if (!isset($_SESSION['user']) || $_SESSION['user']['role'] != 'user') {
+    header("location: login.php");
+    exit();
+}
+
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -19,21 +29,23 @@
                     width: 50px;
                     height: 50px;
                     ">
-                <p class="text-center text-white mt-2">Username </p>
+                <?php
+                ?>
+                <p class="text-center text-white mt-2"><?= $_SESSION['user']['Username'] ?></p>
                 <hr class="text-primary ">
                 <nav>
                     <ul class=" nav  flex-column gap-3  ">
                         <li class="nav-item rounded-3">
-                            <a class=" nav-link " aria-current="page" href="#">Home</a>
+                            <a class=" nav-link " aria-current="page" href="/user/">Home</a>
                         </li>
                         <li class="nav-item rounded-3">
-                            <a class="nav-link" href="#">Persyaratan</a>
+                            <a class="nav-link" href="user/persyaratan.php">Persyaratan</a>
                         </li>
                         <li class="nav-item rounded-3">
-                            <a class="nav-link" href="#">Pendaftaran</a>
+                            <a class="nav-link" href="user/pendaftaran.php">Pendaftaran</a>
                         </li>
                         <li class="nav-item rounded-3">
-                            <a class="nav-link Logout">Logout </a>
+                            <a class="nav-link Logout" href="/logout.php">Logout </a>
                         </li>
                     </ul>
                 </nav>
@@ -44,10 +56,10 @@
         <div class="col-12 col-md-10">
             <div>
 
-                <div class="row align-items-center px-1 ">
+                <div class="row align-items-center px-1 mx-2 ">
                     <!-- hamburger menu -->
-                    <div class="col-1 d-sm-none">
-                        <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas"
+                    <div class="col-2 d-sm-none">
+                        <button class="btn btn-primary " type="button" data-bs-toggle="offcanvas"
                             data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling"><i
                                 class="bi bi-list"></i></button>
 
@@ -64,16 +76,16 @@
                                 <nav class="w-100 px-4">
                                     <ul class=" nav  flex-column gap-3  ">
                                         <li class="nav-item rounded-3">
-                                            <a class=" nav-link " aria-current="page" href="#">Home</a>
+                                            <a class=" nav-link " aria-current="page" href="/user">Home</a>
                                         </li>
                                         <li class="nav-item rounded-3">
-                                            <a class="nav-link" href="#">Persyaratan</a>
+                                            <a class="nav-link" href="/user/persyaratan.php">Persyaratan</a>
                                         </li>
                                         <li class="nav-item rounded-3">
-                                            <a class="nav-link" href="#">Pendaftaran</a>
+                                            <a class="nav-link" href="/user/pendaftaran.php">Pendaftaran</a>
                                         </li>
                                         <li class="nav-item rounded-3">
-                                            <a class="nav-link Logout">Logout </a>
+                                            <a class="nav-link Logout" href="/logout.php">Logout </a>
                                         </li>
                                     </ul>
                                 </nav>
@@ -81,10 +93,10 @@
                         </div>
                     </div>
                     <div class="col-3 py-2 ">
-                        <img src="../asset/logo.jpeg" alt="logo" class="w-60 img-fluid  mx-auto d-block  ">
+                        <img src="../asset/logo.jpeg" alt="logo" class="img-hero   mx-auto d-block  ">
                     </div>
                     <div class="col-6 ">
-                        <p class="fs-6  fw-bold text-dark ">Pondok Pesantren Ali Bin Ali Thalib</p>
+                        <p class="fs-4  fw-bold text-dark ">Pondok Pesantren Ali Bin Ali Thalib</p>
                         <small class="address">
                             JL. Mayor Daud Umar, Dowora, Kec Tidore Timur
                         </small>
@@ -95,7 +107,7 @@
 
                 <div class="p-5 ">
 
-                    <h1 class="text-primary fw-bold">Selamat Datang Username</h1>
+                    <h1 class="text-primary fw-bold">Selamat Datang <?= $_SESSION['user']['Username'] ?></h1>
 
                     <p class="text-center mx-auto mt-4 fw-bolder fs-4  " style="max-width: 800px;">Selamat Datang di
                         Webstie Pendaftaran santri, pondok pesantren Ali Bin Ali Thalib, Wabsite ini
@@ -129,10 +141,10 @@
                         </ol>
 
                     </div>
-                    
-                    
+
+
                     <div class="my-5 ">
-                        
+
                         <h2 class="text-primary mt-4 d-block "># info Lebih lanjut </h2>
                         <a href="" class=" d-flex gap-4 align-items-center text-center ">
                             <img src="../asset/whatsapp.png" alt="whatsapp" style="width: 5rem;" class="">

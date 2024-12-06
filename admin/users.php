@@ -1,3 +1,14 @@
+<?php
+    session_start();
+    require_once "../db/getConn.php";
+
+
+    $stmt = $conn->prepare("SELECT * FROM users WHERE role = 'user'");
+
+    $stmt->execute();
+
+    $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+?>
 <!DOCTYPE html>
 <!--
                   This is a starter template page. Use this page to start your new project from
@@ -57,7 +68,7 @@
                         <img src="dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
                     </div>
                     <div class="info">
-                        <a href="#" class="d-block">Alexander Pierce</a>
+                        <a href="#" class="d-block"><?= $_SESSION['user']['Username'] ?></a>
                     </div>
                 </div>
 
@@ -69,7 +80,7 @@
                         <!-- Add icons to the links using the .nav-icon class
                                  with font-awesome or any other icon font library -->
                         <li class="nav-item en">
-                            <a href="#" class="nav-link active">
+                            <a href="index.html " class="nav-link active">
                                 <i class="nav-icon fas fa-tachometer-alt"></i>
                                 <p>
                                     Dashboard
@@ -87,7 +98,7 @@
                             </a>
                         </li>
                         <li class="nav-item menu-open">
-                            <a href="pages/widgets.html" class="nav-link">
+                            <a href="peserta.html" class="nav-link">
                                 <!-- <i class="nav-icon fas fa-th"></i> -->
                                 <i class=" nav-icon  fas fa-users"></i>
                                 <p>
@@ -125,12 +136,12 @@
                 <div class="container-fluid">
                     <div class="row mb-2">
                         <div class="col-sm-6">
-                            <h1 class="m-0">Daftar Semua Peserta</h1>
+                            <h1 class="m-0">Daftar User</h1>
                         </div><!-- /.col -->
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right">
                                 <li class="breadcrumb-item"><a href="#">dashboard</a></li>
-                                <li class="breadcrumb-item  active"><a href="">Daftar Semua peserta</a></li>
+                                <li class="breadcrumb-item "><a href="">Daftar User</a></li>
                             </ol>
                         </div><!-- /.col -->
                     </div><!-- /.row -->
@@ -141,71 +152,76 @@
             <!-- Main content -->
             <div class="content">
                 <div class="container-fluid">
-                    <a
-                        name=""
-                        id=""
-                        class="btn btn-primary my-2  "
-                        href="#"
-                        role="button"
-                        >
-                        Tambah Peserta 
-                        <i class="fas fa-user-plus mx-2 d-inline-block "></i>
-                        
-                        </a                   
-                        >
-                      
                     <!-- TABLE -->
-
                     <div class="card">
                         <div class="card-header">
-                            <h3 class="card-title">Daftar Semua Peserta</h3>
+                            <h3 class="card-title">Daftar User </h3>
                         </div>
                         <!-- /.card-header -->
+                         <?php
+                            if($result) : 
+                         ?>
                         <div class="card-body">
                             <table id="example1" class="table table-bordered table-striped">
                                 <thead>
                                     <tr>
                                         <th>No</th>
-                                        <th>Nama </th>
-                                        <th>No.Hp</th>
-                                        <th>Alamat</th>
-                                        <th>Asal Sekolah</th>
-                                        <th>Tingkatan</th>
+                                        <th>Username</th>
+                                        <th>Email</th>
+                                        <th>Password</th>
                                         <th>#</th>
                                     </tr>
                                 </thead>
                                 <tbody>
+                                    <?php
+                                        $no = 1;
+                                        foreach($result as $user):
+                                    ?>
                                     <tr>
-                                        <td>1</td>
-                                        <td>testing</td>
-                                        <td>083434451234</td>
-                                        <td>Tidore, Soasio rt rw fdf fjdkjf fdjkf fjdkfjdkfjdfk fjdkf</td>
-                                        <td> SD Negeri 1</td>
-                                        <td>Ulya</td>
+                                        <td><?= $no++ ?></td>
+                                        <td><?= $user['Username'] ?></td>
+                                        <td><?= $user['Password'] ?></td>
+                                        <td>f#gmail </td> 
                                         <td class="d-flex justify-content-center gap-2  ">
-                                            <a name="" id="" class="btn btn-primary" href="#" role="button">Detail</a>
+                                            <a
+                                                name=""
+                                                id=""
+                                                class="btn btn-primary"
+                                                href="#"
+                                                role="button"
+                                                >Detail</a
 
-                                            <button type="button" class="btn btn-danger">
+                                            >
+
+                                            <button
+                                                type="button"
+                                                class="btn btn-danger"
+                                            >
                                                 delete
                                             </button>
-
+                                                                                        
                                         </td>
                                     </tr>
 
+                                    <?php
+                                    endforeach;
+                                    ?>
+                                    
                                 </tbody>
                                 <tfoot>
                                     <tr>
                                         <th>No</th>
-                                        <th>Nama </th>
-                                        <th>No.Hp</th>
-                                        <th>Alamat</th>
-                                        <th>Asal Sekolah</th>
-                                        <th>Tingkatan</th>
+                                        <th>Username</th>
+                                        <th>Email</th>
+                                        <th>Password</th>
                                         <th>#</th>
                                     </tr>
                                 </tfoot>
                             </table>
                         </div>
+                        <?php
+                        endif; 
+                        ?>
                         <!-- /.card-body -->
                     </div>
                 </div><!-- /.container-fluid -->
@@ -262,45 +278,45 @@
     <script>
         $(function () {
             $("#example1").DataTable({
-                "responsive": true, "lengthChange": false, "autoWidth": false,
+                "responsive": true, "lengthChange": false, "autoWidth": true ,
                 // "buttons": ["copy", "csv", "excel", 
                 // "pdf", "print", "colvis"],
-                "buttons": [
+                "buttons" : [
                     {
                         "extend": 'print',
-                        "exportOptions": {
+                        "exportOptions" : {
                             "columns": ':visible'
                         }
                     },
                     {
                         "extend": 'excelHtml5',
-                        "exportOptions": {
+                        "exportOptions" : {
                             "columns": ':visible'
                         }
                     },
                     {
                         "extend": 'csvHtml5',
-                        "exportOptions": {
+                        "exportOptions" : {
                             "columns": ':visible'
                         }
                     },
                     {
                         "extend": 'pdfHtml5',
-                        "exportOptions": {
+                        "exportOptions" : {
                             "columns": ':visible'
                         }
                     },
                     'colvis'
                 ],
-                "columnDefs": [
+                "columnDefs" : [
                     {
-                        //   "targets": -1,
+                    //   "targets": -1,
                         visible: false
                     }
                 ]
+                
 
-
-
+                
             }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
             $('#example2').DataTable({
                 "paging": true,

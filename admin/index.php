@@ -1,3 +1,15 @@
+<?php
+session_start();
+require_once "../db/getConn.php";
+
+
+if($_SESSION['user']['role'] != 'admin') {
+  header("location: /user");
+  exit();
+}
+
+
+?>
 <!DOCTYPE html>
 <!--
 This is a starter template page. Use this page to start your new project from

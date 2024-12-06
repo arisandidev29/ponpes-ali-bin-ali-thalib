@@ -24,7 +24,7 @@
                 <nav>
                     <ul class=" nav  flex-column gap-3  ">
                         <li class="nav-item rounded-3">
-                            <a class=" nav-link d-flex  justify-content-between " aria-current="page" href="#">
+                            <a class=" nav-link d-flex  justify-content-between " aria-current="page" href="/user">
                                 Home
                                 <i class="bi bi-house"></i>
 
@@ -32,24 +32,25 @@
                             </a>
                         </li>
                         <li class="nav-item rounded-3">
-                            <a class="nav-link d-flex justify-content-between" href="#">
+                            <a class="nav-link d-flex justify-content-between" href="persyaratan.php">
                                 Persyaratan
 
                                 <i class="bi bi-info-circle"></i>
                             </a>
                         </li>
                         <li class="nav-item rounded-3">
-                            <a class="nav-link d-flex justify-content-between" href="#">
+                            <a class="nav-link d-flex justify-content-between" href="pendaftaran.php">
                                 Pendaftaran
                                 <i class="bi bi-pencil-square"></i>
                             </a>
                         </li>
                         <li class="nav-item rounded-3">
-                            <a class="nav-link d-flex justify-content-between Logout">
+                            <a class="nav-link d-flex justify-content-between Logout" href="/logout.php">
                                 Logout
                                 <i class="bi bi-box-arrow-right"></i>
                             </a>
                         </li>
+                        
                     </ul>
                 </nav>
             </div>
@@ -59,10 +60,10 @@
         <div class="col-12 col-md-10">
             <div>
 
-                <div class="row align-items-center px-1 ">
+                 <div class="row align-items-center px-1 mx-2 ">
                     <!-- hamburger menu -->
-                    <div class="col-1 d-sm-none">
-                        <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas"
+                    <div class="col-2 d-sm-none">
+                        <button class="btn btn-primary " type="button" data-bs-toggle="offcanvas"
                             data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling"><i
                                 class="bi bi-list"></i></button>
 
@@ -79,32 +80,16 @@
                                 <nav class="w-100 px-4">
                                     <ul class=" nav  flex-column gap-3  ">
                                         <li class="nav-item rounded-3">
-                                            <a class=" nav-link d-flex  justify-content-between " aria-current="page"
-                                                href="#">
-                                                Home
-                                                <i class="bi bi-house"></i>
-
-
-                                            </a>
+                                            <a class=" nav-link " aria-current="page" href="/user">Home</a>
                                         </li>
                                         <li class="nav-item rounded-3">
-                                            <a class="nav-link d-flex justify-content-between" href="#">
-                                                Persyaratan
-
-                                                <i class="bi bi-info-circle"></i>
-                                            </a>
+                                            <a class="nav-link" href="/user/persyaratan.php">Persyaratan</a>
                                         </li>
                                         <li class="nav-item rounded-3">
-                                            <a class="nav-link d-flex justify-content-between" href="#">
-                                                Pendaftaran
-                                                <i class="bi bi-pencil-square"></i>
-                                            </a>
+                                            <a class="nav-link" href="/user/pendaftaran.php">Pendaftaran</a>
                                         </li>
                                         <li class="nav-item rounded-3">
-                                            <a class="nav-link d-flex justify-content-between Logout">
-                                                Logout
-                                                <i class="bi bi-box-arrow-right"></i>
-                                            </a>
+                                            <a class="nav-link Logout" href="/logout.php">Logout </a>
                                         </li>
                                     </ul>
                                 </nav>
@@ -112,7 +97,7 @@
                         </div>
                     </div>
                     <div class="col-3 py-2 ">
-                        <img src="../asset/logo.jpeg" alt="logo" class="w-60 img-fluid  mx-auto d-block  ">
+                        <img src="../asset/logo.jpeg" alt="logo" class="w-100 img-fluid  mx-auto d-block  ">
                     </div>
                     <div class="col-6 ">
                         <p class="fs-6  fw-bold text-dark ">Pondok Pesantren Ali Bin Ali Thalib</p>
@@ -121,7 +106,7 @@
                         </small>
                     </div>
                 </div>
-                <!-- end hamburger menu -->
+                <!-- end hamburger menu --> 
                 <hr>
 
                 <div class="p-5 ">
